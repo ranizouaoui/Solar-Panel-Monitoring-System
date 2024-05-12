@@ -1,0 +1,38 @@
+version: '3.9'
+
+services: 
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfiles/frontend.dockerfile
+    container_name: frontend
+    ports:
+      - "80:80"
+    networks:
+      - monitoring
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfiles/backend.dockerfile      
+    container_name: backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - DOCKER_ENV=true
+  mongodb:
+    image: mongo:latest
+    command: mongod --bind_ip_all
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      
+networks:
+  monitoring:
+    external: true
