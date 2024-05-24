@@ -16,4 +16,6 @@ jobs:
   security-scan:
     needs: build
     uses: ./.github/workflows/docker-image-security-scan.yml
-    secrets: inherit
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}    
