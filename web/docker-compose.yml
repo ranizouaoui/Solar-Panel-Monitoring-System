@@ -5,15 +5,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfiles/frontend.dockerfile
+    image: ranizouaoui/frontend:latest
     container_name: frontend
     ports:
       - "80:80"
-      
+
   backend:
     build:
       context: .
       dockerfile: Dockerfiles/backend.dockerfile      
     container_name: backend
+    image: ranizouaoui/backend:latest
     ports:
       - "3000:3000"
     depends_on:
