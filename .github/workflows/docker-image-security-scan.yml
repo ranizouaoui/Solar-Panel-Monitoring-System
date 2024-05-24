@@ -2,7 +2,11 @@ name: Docker Image Security Scan
 
 on:
   workflow_call:
-    secrets: inherit
+    secrets:
+      DOCKER_USERNAME:
+        required: true
+      DOCKER_PASSWORD:
+        required: true
 
 jobs:
   scan:
@@ -28,8 +32,11 @@ jobs:
 
     - name: Build Docker Compose services
       run: |
-        cd path/to/your/docker-compose/directory  # Change this to the actual path if not in the root
+        cd web  # Change this to the actual path if not in the root
         docker-compose build
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Scan frontend image with Trivy
       uses: aquasecurity/trivy-action@master
