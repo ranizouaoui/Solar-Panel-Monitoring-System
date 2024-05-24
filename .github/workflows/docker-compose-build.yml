@@ -48,11 +48,17 @@ jobs:
     - name: Build and run Docker Compose
       run: |
         cd web
-        docker-compose up --build -d
+        docker-compose build
 
-    - name: Wait for services to be ready
+    - name: Tag and push frontend image
       run: |
-        sleep 30 # Adjust this if necessary to ensure services are ready
+        docker tag frontend:latest ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
+
+    - name: Tag and push backend image
+      run: |
+        docker tag backend:latest ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.sha }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.sha }}
 
     - name: Run tests
       run: |
