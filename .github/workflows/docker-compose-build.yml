@@ -52,14 +52,13 @@ jobs:
 
     - name: Tag and push frontend image
       run: |
-        docker tag frontend:latest ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
+        docker ranizouaoui/frontend:latest ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
         docker push ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
 
     - name: Tag and push backend image
       run: |
-        docker tag backend:latest ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.sha }}
+        docker tag ranizouaoui/backend:latest ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.sha }}
         docker push ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.sha }}
-
     - name: Run tests
       run: |
         # Add your test commands here
