@@ -11,7 +11,4 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/docker.yml
-    with:
-      DOCKER_IMAGE_NAME: your-image-name
-      DOCKER_IMAGE_TAG: latest
     secrets: inherit
