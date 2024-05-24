@@ -8,7 +8,7 @@ The <a href="https://github.com/ranizouaoui/solar-panel-monitoring/">Solar Panel
  
 ## Project Map
 <div align="center"> 
-<img src="https://github.com/ranizouaoui/solar-panel-monitoring/blob/main/web-app/frontend/src/assets/pv-arch.gif" alt="" />
+<img src="https://github.com/ranizouaoui/solar-panel-monitoring/blob/main/pictures/pv-arch.gif" alt="" />
  </div>
 <strong> Note:</strong> The <a href="https://www.espressif.com/en/products/socs/esp32" >ESP32 </a>board starts sending data if it is well configured (from the configuration interface)
 
@@ -40,7 +40,7 @@ The <a href="https://github.com/ranizouaoui/solar-panel-monitoring/">Solar Panel
 <p dir="auto">Make sure Docker is installed.</p>
 </blockquote>
 
-<blockquote> <p dir="auto">You need to update the API file with your settings in <strong> web-app>frontend>src>api </strong> and <strong>web-app>backend>src>api</strong> </p></blockquote>
+<blockquote> <p dir="auto">You need to update the API file with your settings in <strong> web>frontend>src>api </strong> and <strong>web>backend>src>api</strong> </p></blockquote>
 <p dir="auto">Spin up the containers</p>
 
 ```
