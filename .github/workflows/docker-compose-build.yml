@@ -52,7 +52,7 @@ jobs:
 
     - name: Tag and push frontend image
       run: |
-        docker ranizouaoui/frontend:latest ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
+        docker tag ranizouaoui/frontend:latest ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
         docker push ${{ secrets.DOCKER_USERNAME }}/frontend:${{ github.sha }}
 
     - name: Tag and push backend image
