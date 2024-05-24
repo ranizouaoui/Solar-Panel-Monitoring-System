@@ -43,6 +43,7 @@ jobs:
 
     - name: Build and run Docker Compose
       run: |
+        cd web
         docker-compose up --build -d
 
     - name: Wait for services to be ready
