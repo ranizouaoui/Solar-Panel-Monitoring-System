@@ -11,11 +11,13 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/docker-build-push.yml
-    secrets: inherit
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
   security-scan:
     needs: build
     uses: ./.github/workflows/docker-image-security-scan.yml
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}    
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
