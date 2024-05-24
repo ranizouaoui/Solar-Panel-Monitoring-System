@@ -59,6 +59,17 @@ jobs:
       run: |
         docker tag ranizouaoui/backend:latest ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.sha }}
         docker push ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.sha }}
+        
+    - name: Scan frontend image with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ranizouaoui/frontend:latest
+
+    - name: Scan backend image with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ranizouaoui/backend:latest
+        
     - name: Run tests
       run: |
         # Add your test commands here
