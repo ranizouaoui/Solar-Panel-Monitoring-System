@@ -44,7 +44,7 @@ jobs:
 
     - name: Build and run Docker Compose
       run: |
-        cd path/to/your/docker-compose/directory  # Change this to the actual path if not in the root
+        cd web  # Change this to the actual path if not in the root
         docker-compose up --build -d
 
     - name: Wait for services to be ready
