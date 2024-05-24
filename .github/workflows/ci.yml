@@ -10,14 +10,8 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/docker-build-push.yml
-    secrets:
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-
-  security-scan:
-    needs: build
-    uses: ./.github/workflows/docker-image-security-scan.yml
-    secrets:
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    uses: ./.github/workflows/docker-compose-build.yml
+    with:
+      DOCKER_IMAGE_NAME: your-image-name
+      DOCKER_IMAGE_TAG: latest
+    secrets: inherit
