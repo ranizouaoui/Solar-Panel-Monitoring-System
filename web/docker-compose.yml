@@ -8,8 +8,7 @@ services:
     container_name: frontend
     ports:
       - "80:80"
-    networks:
-      - monitoring
+      
   backend:
     build:
       context: .
@@ -33,6 +32,3 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
       
-networks:
-  monitoring:
-    external: true
