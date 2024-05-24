@@ -12,3 +12,8 @@ jobs:
   build:
     uses: ./.github/workflows/docker-build-push.yml
     secrets: inherit
+
+  security-scan:
+    needs: build
+    uses: ./.github/workflows/docker-image-security-scan.yml
+    secrets: inherit
