@@ -18,10 +18,10 @@ The <a href="https://github.com/ranizouaoui/solar-panel-monitoring/">Solar Panel
 
  1- Download and install <a href="https://www.arduino.cc/">Arduino</a>.<br/>
  2- Install <a href="https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/">ESP32 Filesystem Uploader in Arduino IDE</a>.<br/>
- 3- Edit the source <a href="https://github.com/ranizouaoui/ESP32-Based-IoT-Tracking-System/blob/main/ESP-codes/Main-code/Main-code.ino">Code</a> (update the broker and the firebase settings).<br/>
+ 3- Edit the source <a href="https://github.com/ranizouaoui/Solar-Panel-Monitoring-System/blob/main/iot/code_arduino_final/main_code/main_code.ino">Code</a> (update the broker and the firebase settings).<br/>
  4- Install the libraries used in the arduino code.<br/>
  5- Upload the configuration interface in spiffs on esp32 board (Go to <strong> Tools >ESP32 Data Sketch Upload</strong> and wait for the files to be uploaded).<br/>
- 6- Upload the source <a href="https://github.com/ranizouaoui/ESP32-Based-IoT-Tracking-System/blob/main/ESP-codes/Main-code/Main-code.ino">Code</a>. <br/>
+ 6- Upload the source <a href="https://github.com/ranizouaoui/Solar-Panel-Monitoring-System/blob/main/iot/code_arduino_final/main_code/main_code.ino">Code</a>. <br/>
  
  <blockquote> <p dir="auto">You will need to create an account in firebase and HiveMQ to be able to modify the arduino code</p></blockquote>
 
